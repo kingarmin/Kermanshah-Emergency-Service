@@ -1,0 +1,17 @@
+The `engine` argument in the `pd.read_excel()` function specifies which engine to use for reading the Excel file. There are different engines available for reading Excel files, and each has its own set of features and performance characteristics. Here are the commonly used engines:
+
+1. **`openpyxl`**: This is the default engine used for reading `.xlsx` files (Excel files created by Excel 2007 and later). It is widely used and supports many features of Excel files, including reading and writing cell values, styles, and formats.
+
+2. **`xlrd`**: This engine is used for reading `.xls` files (Excel files created by Excel 2003 and earlier). It does not support reading `.xlsx` files. As of version 2.0, `xlrd` has removed support for `.xlsx` files due to security reasons, so it is mainly used for older `.xls` files now.
+
+3. **`pyxlsb`**: This engine is used for reading `.xlsb` files (Excel binary files). It is a less commonly used format, but `pyxlsb` can handle it.
+
+For example, when you use `engine='openpyxl'`, it explicitly tells pandas to use the `openpyxl` engine to read the `.xlsx` file:
+
+```python
+df = pd.read_excel(file_path, engine='openpyxl')
+```
+
+This can be useful if you want to ensure compatibility or take advantage of specific features supported by a particular engine. In your case, since you are working with `.xlsx` files and need to preserve formatting, `openpyxl` is the appropriate choice.
+
+If you have any more questions or need further assistance, feel free to ask!
